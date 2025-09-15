@@ -1,11 +1,6 @@
-/**
+﻿/**
  * Services.tsx
- * Full services overview page.
- * - Intro block with title/lead
- * - Image-backed service cards in a responsive grid
- * - “Why work with us” bullets
- * - CTA band to contact
- * Uses CSS Modules for scoped styles.
+ * Full services overview template populated with placeholder data.
  */
 
 import * as React from 'react';
@@ -13,13 +8,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Services.module.scss';
 
-// Import images (Vite will optimize/hash these)
-import servicePc from '../assets/service-pc.jpg';
-import serviceSupport from '../assets/service-support.jpg';
-import serviceData from '../assets/service-data.jpg';
-import serviceAdmin from '../assets/service-admin.jpg';
-import serviceWebsite from '../assets/service-website.jpg';
-import serviceRepair from '../assets/service-repair.jpg';
+import placeholderImg from '../assets/placeholder.jpg';
 
 type Service = {
   title: string;
@@ -31,87 +20,87 @@ type Service = {
 
 const services: Service[] = [
   {
-    title: 'Custom PC Builds',
+    title: 'Strategy & Planning',
     description:
-      'Expertly designed systems for gaming, creative work, or business. We handle parts selection, assembly, tuning, and testing.',
-    img: servicePc,
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum.',
+    img: placeholderImg,
     details:
-      'From airflow and thermals to workload-tuned parts, we design, assemble, and stress-test PCs that match your budget and goals—no upsell, just results.',
+      'Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.',
     examples: [
-      'Gaming rigs with reliable 144+ FPS targets',
-      'Creator builds for Adobe/DaVinci/Blender',
-      'Small-business workstations and quiet office PCs',
-      'Parts sourcing, BIOS tuning, cable management',
+      'Discovery workshops and goal alignment',
+      'Roadmaps and milestone planning',
+      'Persona development and user journeys',
+      'Budget estimates and scope outlines',
     ],
   },
   {
-    title: 'Tech Support (24/7)',
+    title: 'Design & Content',
     description:
-      'Remote or on-site help for urgent issues, performance problems, malware cleanup, device setup, and more—anytime you need it.',
-    img: serviceSupport,
+      'Praesent commodo cursus magna, vel scelerisque nisl consectetur. Aenean lacinia bibendum nulla sed consectetur.',
+    img: placeholderImg,
     details:
-      'Fast, plain‑English support by phone, remote, or on‑site. We triage and resolve issues without the jargon or runaround.',
+      'Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.',
     examples: [
-      'Malware cleanup and performance tuning',
-      'Printer/Wi‑Fi/device setup and troubleshooting',
-      'Email, accounts, and permissions sorted out',
-      'Proactive checkups to prevent repeat problems',
+      'Brand identity refreshes',
+      'Page layouts and component libraries',
+      'Copywriting and content planning',
+      'Asset production guidelines',
     ],
   },
   {
-    title: 'Data & Migration',
+    title: 'Development Sprints',
     description:
-      'Move to a new machine with confidence. Backups, transfers, and data integrity checks so nothing is lost in the shuffle.',
-    img: serviceData,
+      'Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec id elit non mi porta gravida at eget metus.',
+    img: placeholderImg,
     details:
-      'We plan and verify migrations so your files, apps, and settings are exactly where you need them on day one—safely backed up along the way.',
+      'Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam id dolor id nibh ultricies vehicula ut id elit.',
     examples: [
-      'Full PC‑to‑PC data transfer and validation',
-      'Cloud drive consolidation (Drive, OneDrive, iCloud)',
-      'Backup strategy with versioning and restore tests',
-      'Email/Outlook moves with rules and signatures',
+      'Component implementation',
+      'CMS setup and configuration',
+      'Integration with third-party APIs',
+      'Performance and accessibility passes',
     ],
   },
   {
-    title: 'Admin Automation',
+    title: 'Support & Maintenance',
     description:
-      'Streamline repetitive work with spreadsheets, scripts, and lightweight tools tailored to your small business processes.',
-    img: serviceAdmin,
+      'Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo.',
+    img: placeholderImg,
     details:
-      'We turn your recurring admin tasks into simple, reliable workflows—spreadsheets, scripts, and small tools that save hours every week.',
+      'Etiam porta sem malesuada magna mollis euismod. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.',
     examples: [
-      'Spreadsheet templates with error‑proof formulas',
-      'Bulk invoice/PO generators and CSV imports',
-      'Data clean‑up and simple dashboards',
-      'Email/report automation on a schedule',
+      'Scheduled check-ins and updates',
+      'Content publishing assistance',
+      'Analytics snapshots and reports',
+      'Training sessions for handoff',
     ],
   },
   {
-    title: 'Web Development & Modernization',
+    title: 'Optimization',
     description:
-      'Design and rebuild modern sites, streamline small-business workflows (booking, invoicing, analytics), and migrate off legacy tools with minimal downtime.',
-    img: serviceWebsite,
+      'Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nulla vitae elit libero, a pharetra augue.',
+    img: placeholderImg,
     details:
-      'Modern, fast websites with the essentials built‑in—SEO basics, analytics, contact/booking, and a maintainable setup you actually control.',
+      'Vestibulum id ligula porta felis euismod semper. Maecenas faucibus mollis interdum.',
     examples: [
-      'Rebuild legacy sites with mobile‑first layouts',
-      'Online booking/contact forms wired to email/CRMs',
-      'Lightweight sites with great Core Web Vitals',
-      'Migration off dead plugins and fragile stacks',
+      'Site speed tuning',
+      'Conversion rate reviews',
+      'Search optimization checklists',
+      'Automation and workflow tweaks',
     ],
   },
   {
-    title: 'Hardware Repairs',
+    title: 'Workshops & Training',
     description:
-      'Diagnostics and repairs for laptops/desktops: SSD/RAM upgrades, thermal servicing, screen/keyboard/battery replacements, deep cleaning, and tune‑ups.',
-    img: serviceRepair,
+      'Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur.',
+    img: placeholderImg,
     details:
-      'Clear diagnosis and upfront quotes—repairs and upgrades done right, with parts we trust and careful attention to longevity and thermals.',
+      'Donec ullamcorper nulla non metus auctor fringilla. Donec sed odio dui.',
     examples: [
-      'SSD/RAM upgrades and OS refreshes',
-      'Thermal paste and deep clean for overheating',
-      'Laptop screens, keyboards, and battery swaps',
-      'No‑boot recovery and data preservation',
+      'Team onboarding sessions',
+      'Tooling walkthroughs',
+      'Process documentation reviews',
+      'Q&A office hours',
     ],
   },
 ];
@@ -129,87 +118,87 @@ const Services: React.FC = () => {
   }, [expanded]);
 
   return (
-  <section className={styles.wrapper} aria-labelledby="services-title">
-    {/* Intro */}
-    <div className={styles.intro}>
-      <h2 id="services-title" className={styles.title}>Our Services</h2>
-      <p className={styles.lead}>
-        Practical, no-nonsense solutions with clear outcomes and honest pricing. Pick what you need
-        or ask us for a recommendation—we’ll right-size it.
-      </p>
-    </div>
-
-    {/* Services grid */}
-    <ul className={styles.cardGrid} role="list">
-      {services.map((s) => {
-        const isExpanded = expanded === s.title;
-        const panelId = 'svc-expanded-panel';
-        return (
-          <li className={styles.card} key={s.title}>
-            <img className={styles.cardImg} src={s.img} alt={s.title} loading="lazy" />
-            <h3 className={styles.cardHeading}>{s.title}</h3>
-            <p>{s.description}</p>
-            <div className={styles.cardActions}>
-              <button
-                type="button"
-                className={`btn ${isExpanded ? 'btn--primary' : 'btn--primary'}`}
-                aria-expanded={isExpanded}
-                aria-controls={panelId}
-                onClick={() => toggle(s.title)}
-              >
-                {isExpanded ? 'Hide Details' : 'Learn More'}
-              </button>
-            </div>
-          </li>
-        );
-      })}
-    </ul>
-
-    {expanded && (() => {
-      const svc = services.find((x) => x.title === expanded)!;
-      return (
-        <div
-          id="svc-expanded-panel"
-          className={styles.expandedPanel}
-          aria-live="polite"
-          ref={panelRef}
-        >
-          <img className={styles.expandedImg} src={svc.img} alt={svc.title} />
-          <h3 className={styles.cardHeading}>{svc.title}</h3>
-          <p>{svc.details || svc.description}</p>
-          {svc.examples?.length ? (
-            <ul className={styles.examples} aria-label="Examples">
-              {svc.examples.map((ex) => (
-                <li key={ex}>{ex}</li>
-              ))}
-            </ul>
-          ) : null}
-        </div>
-      );
-    })()}
-
-    {/* Why work with us */}
-    <div className={styles.whyBox} aria-labelledby="why-title">
-      <h3 id="why-title" className={styles.whyTitle}>Why Work With TechSimple-TO</h3>
-      <ul className={styles.bullets}>
-        <li><strong>Clarity first:</strong> options explained in plain language—no jargon.</li>
-        <li><strong>Speed when it counts:</strong> quick response and minimal downtime.</li>
-        <li><strong>Right-sized solutions:</strong> we propose what you actually need.</li>
-        <li><strong>Transparent pricing:</strong> clear quotes before any work begins.</li>
-      </ul>
-    </div>
-
-    {/* CTA band */}
-    <section className={styles.ctaBand} aria-labelledby="services-cta">
-      <div className={styles.ctaBandInner}>
-        <h2 id="services-cta" className={styles.h2w}>Not sure where to start?</h2>
-        <p className={styles.hintw}>Tell us your goals—we’ll recommend a plan in plain English.</p>
-        <div className={styles.sectionCtaRow}>
-          <Link className="btn btn--secondary" to="/contact">Contact Us</Link>
-        </div>
+    <section className={styles.wrapper} aria-labelledby="services-title">
+      {/* Intro */}
+      <div className={styles.intro}>
+        <h2 id="services-title" className={styles.title}>Our Services</h2>
+        <p className={styles.lead}>
+          Use these cards as placeholders for your actual offerings. Replace each block with the
+          description, outcomes, and assets that match your business.
+        </p>
       </div>
+
+      {/* Services grid */}
+      <ul className={styles.cardGrid} role="list">
+        {services.map((s) => {
+          const isExpanded = expanded === s.title;
+          const panelId = 'svc-expanded-panel';
+          return (
+            <li className={styles.card} key={s.title}>
+              <img className={styles.cardImg} src={s.img} alt={s.title} loading="lazy" />
+              <h3 className={styles.cardHeading}>{s.title}</h3>
+              <p>{s.description}</p>
+              <div className={styles.cardActions}>
+                <button
+                  type="button"
+                  className={`btn ${isExpanded ? 'btn--primary' : 'btn--primary'}`}
+                  aria-expanded={isExpanded}
+                  aria-controls={panelId}
+                  onClick={() => toggle(s.title)}
+                >
+                  {isExpanded ? 'Hide Details' : 'Learn More'}
+                </button>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+
+      {expanded && (() => {
+        const svc = services.find((x) => x.title === expanded)!;
+        return (
+          <div
+            id="svc-expanded-panel"
+            className={styles.expandedPanel}
+            aria-live="polite"
+            ref={panelRef}
+          >
+            <img className={styles.expandedImg} src={svc.img} alt={svc.title} />
+            <h3 className={styles.cardHeading}>{svc.title}</h3>
+            <p>{svc.details || svc.description}</p>
+            {svc.examples?.length ? (
+              <ul className={styles.examples} aria-label="Examples">
+                {svc.examples.map((ex) => (
+                  <li key={ex}>{ex}</li>
+                ))}
+              </ul>
+            ) : null}
+          </div>
+        );
+      })()}
+
+      {/* Why work with us */}
+      <div className={styles.whyBox} aria-labelledby="why-title">
+        <h3 id="why-title" className={styles.whyTitle}>Why Work With Our Team</h3>
+        <ul className={styles.bullets}>
+          <li><strong>Clear process:</strong> share what to expect before you dive in.</li>
+          <li><strong>Flexible scope:</strong> adjust deliverables as your needs evolve.</li>
+          <li><strong>Open communication:</strong> keep stakeholders in the loop.</li>
+          <li><strong>Measurable outcomes:</strong> define success metrics early.</li>
+        </ul>
+      </div>
+
+      {/* CTA band */}
+      <section className={styles.ctaBand} aria-labelledby="services-cta">
+        <div className={styles.ctaBandInner}>
+          <h2 id="services-cta" className={styles.h2w}>Need help choosing a service?</h2>
+          <p className={styles.hintw}>Reach out with your goals and timeline to get a tailored plan.</p>
+          <div className={styles.sectionCtaRow}>
+            <Link className="btn btn--secondary" to="/contact">Contact Us</Link>
+          </div>
+        </div>
+      </section>
     </section>
-  </section>
   );
 };
 

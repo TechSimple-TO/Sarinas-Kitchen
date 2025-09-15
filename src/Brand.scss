@@ -1,4 +1,4 @@
-/* Brand.scss — GLOBAL ONLY (tokens, layout, header/footer) */
+﻿/* Brand.scss - GLOBAL ONLY (tokens, layout, header/footer) */
 /* Google Font moved to index.html <link> for better performance */
 
 :root {
@@ -152,7 +152,7 @@ h6 { font-size: clamp(0.95rem, 1vw, 1.1rem); }
   .btn, .cta, .ctaSecondary { min-height: 44px; padding: .7rem 1rem; }
 }
 
-/* Primary style (blue ⇒ gold hover). Also apply to legacy .cta */
+/* Primary style (blue -> gold hover). Also apply to legacy .cta */
 .btn--primary, .cta {
   background: var(--color-blue);
   color: #fff;

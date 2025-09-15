@@ -1,4 +1,4 @@
-
+﻿
 /**
  * App.tsx
  * Main application component that sets up routing and layout.
@@ -30,7 +30,7 @@ const Contact = lazy(() => import('./pages/Contact'));
 export default function App() {
   return (
     <Layout>
-      <Suspense fallback={<div className="container" style={{ padding: '2rem 0' }}>Loading…</div>}>
+      <Suspense fallback={<div className="container" style={{ padding: '2rem 0' }}>Loading...</div>}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
@@ -41,3 +41,5 @@ export default function App() {
     </Layout>
   );
 }
+
+

@@ -1,6 +1,6 @@
-# TechSimple-TO Website (React + Vite)
+﻿# Website Project Template (React + Vite)
 
-This repository contains the source code for my website. It’s a modern React + TypeScript + Vite app that others can use as a starting point to build a clean, fast website for their small business.
+This branch provides a clean React + TypeScript + Vite starter packed with placeholder copy, images, and structure. Swap the lorem ipsum text, update the assets, and you have a ready-to-customize project foundation for your next client site.
 
 ## Quick Start
 
@@ -29,11 +29,11 @@ Notes:
 - `.env.local` is git-ignored; do not commit secrets.
 - Copy `.env.example` as a template and update values from your EmailJS dashboard.
 - Restart the dev server after changing env vars.
-- The contact form sends fields: `name`, `email`, `title`, `message` — make sure your EmailJS template expects these variables.
+- The contact form sends fields: `name`, `email`, `title`, `message` - make sure your EmailJS template expects these variables.
 
 ## Contributing / Reuse
 
-Feel free to fork this repo and adapt it for your own small business site. PRs that improve clarity, accessibility, performance, or developer ergonomics are welcome.
+Feel free to fork this repo or branch and adapt it for your workflow. Pull requests that improve clarity, accessibility, performance, or developer ergonomics are welcome.
 
 ## Git Worktrees (multi-branch setup)
 
