@@ -1,6 +1,6 @@
 ﻿/**
  * About.tsx
- * Expanded "About" page template filled with placeholder copy.
+ * Bio page sharing Sarina's story, mission, and approach.
  */
 
 import React from 'react';
@@ -13,12 +13,17 @@ const About: React.FC = () => (
   <section className={styles.wrapper}>
     {/* Page title */}
     <div className={styles.introBox}>
-      <h2 className={styles.title}>About Our Studio</h2>
+      <h2 className={styles.title}>Meet Sarina</h2>
 
       {/* Lead paragraph: quick, friendly summary */}
       <p className={styles.lead}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a
-        pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+        Sarina DiLuca is the chef and storyteller behind Sarina's Kitchen. She grew up rolling pasta
+        alongside her Nonna in Vaughan and refined her craft in boutique hotels and farm-to-table
+        kitchens across Ontario.
+      </p>
+      <p className={styles.lead}>
+        Her mission is simple: bring the warmth of Sunday suppers to modern celebrations while making
+        Italian cooking approachable for every home cook.
       </p>
     </div>
 
@@ -26,7 +31,7 @@ const About: React.FC = () => (
     <img
       className={styles.aboutImg}
       src={placeholderImg}
-      alt="Placeholder team"
+      alt="Chef Sarina plating handmade pasta"
       loading="lazy"
     />
 
@@ -34,63 +39,70 @@ const About: React.FC = () => (
 
     {/* Mission / What we do */}
     <article className={styles.card}>
-      <h3 className={styles.cardTitle}>Our Mission</h3>
+      <h3 className={styles.cardTitle}>Sarina's Story</h3>
       <p>
-        Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia
-        bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget
-        quam.
+        Sarina believes every memorable meal begins with intention. After culinary school and years
+        spent on the line in Toronto's restaurant scene, she launched Sarina's Kitchen to bring
+        restaurant polish to at-home dining.
+      </p>
+      <p>
+        Today she pairs seasonal ingredients with Italian roots, championing local farmers and
+        teaching guests why the best dishes start with good company.
       </p>
     </article>
 
     {/* Services snapshot (lightweight-your full Services page does the deep dive) */}
     <div className={styles.cardGrid}>
       <article className={styles.card}>
-        <h3 className={styles.cardTitle}>What We Offer</h3>
+        <h3 className={styles.cardTitle}>Our Philosophy</h3>
         <ul className={styles.list}>
-          <li>Service planning and discovery workshops</li>
-          <li>Design and development sprints</li>
-          <li>Ongoing support retainers</li>
-          <li>Reporting and optimization reviews</li>
+          <li>Seasonal menus built around Ontario farms and Italian staples.</li>
+          <li>Respect for dietary needs with creative, satisfying alternatives.</li>
+          <li>Hospitality that makes every guest feel like family.</li>
         </ul>
         <p className={styles.note}>
-          See the <Link to="/services">Services</Link> page for placeholders you can swap with real
-          offerings.
+          Explore the <Link to="/services">Services</Link> page to see how this comes to life for
+          dinners, classes, and intimate catering.
         </p>
       </article>
 
-      {/* Values / How we work */}
+      {/* Teaching & mentorship */}
       <article className={styles.card}>
-        <h3 className={styles.cardTitle}>How We Work</h3>
+        <h3 className={styles.cardTitle}>Teaching Style</h3>
         <ul className={styles.list}>
-          <li><strong>Collaborative:</strong> we iterate with your team from start to finish.</li>
-          <li><strong>Transparent:</strong> timelines and deliverables stay visible at every step.</li>
-          <li><strong>Adaptive:</strong> engagements scale to match your budget and goals.</li>
-          <li><strong>Supportive:</strong> documentation and handoff keep transitions smooth.</li>
+          <li>Hands-on lessons that keep groups small so everyone cooks.</li>
+          <li>Chef techniques translated into approachable steps for home kitchens.</li>
+          <li>Recipes, playlists, and shopping lists delivered after every class.</li>
         </ul>
       </article>
 
-      {/* Credentials / Testimonials nudge */}
+      {/* Highlights */}
       <article className={styles.card}>
-        <h3 className={styles.cardTitle}>Why Clients Choose Us</h3>
-        <p>
-          Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vestibulum id ligula
-          porta felis euismod semper.
-        </p>
+        <h3 className={styles.cardTitle}>Highlights</h3>
+        <ul className={styles.list}>
+          <li>Red Seal certified chef with a decade in boutique catering.</li>
+          <li>Featured instructor at the Toronto Culinary Arts Collective.</li>
+          <li>Partnered with local farms to minimize waste and source responsibly.</li>
+        </ul>
         <p className={styles.note}>
-          Swap in real testimonials once you launch your first project.
+          Guests often note the balance of comfort and discovery in every menu.
         </p>
       </article>
     </div>
 
     {/* Service area / Contact CTA */}
     <article className={styles.card}>
-      <h3 className={styles.cardTitle}>Where We Work</h3>
+      <h3 className={styles.cardTitle}>Where You'll Find Us</h3>
       <p>
-        Pellentesque ornare sem lacinia quam venenatis vestibulum. Use this space to describe your
-        service regions or remote availability.
+        Sarina's Kitchen serves the Greater Toronto Area and will gladly travel farther for special
+        gatherings. Travel fees are calculated transparently based on distance and staffing needs.
+      </p>
+      <p>
+        Whether it's a backyard celebration, condo kitchen, or rented venue, we tailor the setup so
+        you can savor every moment with your guests.
       </p>
       <div className={styles.ctaRow}>
-        <Link className="btn btn--primary" to="/contact">Get in Touch</Link>
+        <Link className="btn btn--primary" to="/contact">Request Availability</Link>
       </div>
     </article>
   </section>

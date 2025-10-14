@@ -12,7 +12,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Brand.scss';
-import placeholder from './assets/placeholder.jpg';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   // Track the mobile menu open/closed state.
@@ -23,7 +22,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const { pathname } = useLocation();
 
   // Helper to attach an "active" class when the current path matches.
-  const isActive = (p: string) => (pathname === p ? 'active' : '');
+  const isActive = (match: string | string[]) => {
+    const targets = Array.isArray(match) ? match : [match];
+    return targets.includes(pathname) ? 'active' : '';
+  };
 
   // Close the mobile menu when the route changes (prevents sticky-open menu)
   useEffect(() => {
@@ -37,8 +39,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container header-inner">
           {/* Brand "home" link.
              Using <Link> avoids a full page reload compared to <a href="/">. */}
-          <Link className="brand" to="/" aria-label="Website template home">
-            <img src={placeholder} alt="Placeholder logo" />
+          <Link className="brand" to="/" aria-label="Sarina's Kitchen home">
+            <span className="brand-mark" aria-hidden="true">SK</span>
+            <span className="brand-wordmark">
+              Sarina's Kitchen
+              <span className="brand-tagline">Private chef • teacher • caterer</span>
+            </span>
           </Link>
 
           {/* Mobile menu toggle (visible at small widths via CSS) */}
@@ -64,7 +70,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             {/* Clicking a link triggers a route change; useEffect above will close the menu */}
             <Link className={isActive('/')} to="/">Home</Link>
             <Link className={isActive('/services')} to="/services">Services</Link>
-            <Link className={isActive('/about')} to="/about">About</Link>
+            <Link className={isActive(['/bio', '/about'])} to="/bio">Bio</Link>
             <Link className={isActive('/contact')} to="/contact">Contact</Link>
           </nav>
         </div>
@@ -76,9 +82,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Footer with a simple contact line */}
       <footer className="site-footer">
         <div className="container">
-          <p>&copy; {new Date().getFullYear()} Your Company Name. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Sarina's Kitchen. All rights reserved.</p>
           <p>
-            Contact: <a href="mailto:hello@example.com">hello@example.com</a>
+            Serving the Greater Toronto Area &middot;{' '}
+            <a href="mailto:hello@sarinaskitchen.ca">hello@sarinaskitchen.ca</a> &middot;{' '}
+            <a href="tel:14165550126">416-555-0126</a>
           </p>
         </div>
       </footer>

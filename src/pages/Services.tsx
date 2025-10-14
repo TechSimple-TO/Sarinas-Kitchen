@@ -20,87 +20,42 @@ type Service = {
 
 const services: Service[] = [
   {
-    title: 'Strategy & Planning',
+    title: 'Private Cooking Experiences',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum.',
+      "Restaurant-caliber, multi-course menus prepared in your kitchen with optional wine pairings and candlelit table styling.",
     img: placeholderImg,
     details:
-      'Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.',
+      'Sarina sources seasonal produce, arrives fully prepped, and leaves your kitchen spotless. Menus are customized after a planning call and include printed keepsake menus for your guests.',
     examples: [
-      'Discovery workshops and goal alignment',
-      'Roadmaps and milestone planning',
-      'Persona development and user journeys',
-      'Budget estimates and scope outlines',
+      'Seasonal tasting menus for 2-12 guests',
+      'Anniversary and proposal dinners',
+      'Wine-paired evenings with sommelier partners',
     ],
   },
   {
-    title: 'Design & Content',
+    title: 'Hands-On Teaching & Workshops',
     description:
-      'Praesent commodo cursus magna, vel scelerisque nisl consectetur. Aenean lacinia bibendum nulla sed consectetur.',
+      'Intimate culinary classes for couples, families, and teams ready to build confidence with Italian techniques.',
     img: placeholderImg,
     details:
-      'Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.',
+      'Each class includes a pre-session call, curated shopping list, and a post-class recap with recipes and chef tips. Virtual add-ons and ingredient kits are available for remote attendees.',
     examples: [
-      'Brand identity refreshes',
-      'Page layouts and component libraries',
-      'Copywriting and content planning',
-      'Asset production guidelines',
+      'Fresh pasta and sauce pairings',
+      'Seasonal gnocchi workshop',
+      'Knife skills and kitchen confidence training',
     ],
   },
   {
-    title: 'Development Sprints',
+    title: 'Boutique Catering',
     description:
-      'Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec id elit non mi porta gravida at eget metus.',
+      'Elevated small-event catering with vibrant grazing tables, cocktail bites, and family-style spreads for up to 40 guests.',
     img: placeholderImg,
     details:
-      'Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam id dolor id nibh ultricies vehicula ut id elit.',
+      'Perfect for showers, milestone birthdays, or corporate open houses. Our team can coordinate rentals, servers, and bartenders to match your vibe.',
     examples: [
-      'Component implementation',
-      'CMS setup and configuration',
-      'Integration with third-party APIs',
-      'Performance and accessibility passes',
-    ],
-  },
-  {
-    title: 'Support & Maintenance',
-    description:
-      'Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo.',
-    img: placeholderImg,
-    details:
-      'Etiam porta sem malesuada magna mollis euismod. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.',
-    examples: [
-      'Scheduled check-ins and updates',
-      'Content publishing assistance',
-      'Analytics snapshots and reports',
-      'Training sessions for handoff',
-    ],
-  },
-  {
-    title: 'Optimization',
-    description:
-      'Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nulla vitae elit libero, a pharetra augue.',
-    img: placeholderImg,
-    details:
-      'Vestibulum id ligula porta felis euismod semper. Maecenas faucibus mollis interdum.',
-    examples: [
-      'Site speed tuning',
-      'Conversion rate reviews',
-      'Search optimization checklists',
-      'Automation and workflow tweaks',
-    ],
-  },
-  {
-    title: 'Workshops & Training',
-    description:
-      'Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur.',
-    img: placeholderImg,
-    details:
-      'Donec ullamcorper nulla non metus auctor fringilla. Donec sed odio dui.',
-    examples: [
-      'Team onboarding sessions',
-      'Tooling walkthroughs',
-      'Process documentation reviews',
-      'Q&A office hours',
+      'Garden parties and shower brunches',
+      'Cocktail receptions with roaming canapés',
+      'Corporate lunches delivered and styled on-site',
     ],
   },
 ];
@@ -121,10 +76,10 @@ const Services: React.FC = () => {
     <section className={styles.wrapper} aria-labelledby="services-title">
       {/* Intro */}
       <div className={styles.intro}>
-        <h2 id="services-title" className={styles.title}>Our Services</h2>
+        <h2 id="services-title" className={styles.title}>What We Bring to the Table</h2>
         <p className={styles.lead}>
-          Use these cards as placeholders for your actual offerings. Replace each block with the
-          description, outcomes, and assets that match your business.
+          Choose the experience that fits your celebration. Each service is tailored after a planning
+          call so your menu, pacing, and presentation feel distinctly yours.
         </p>
       </div>
 
@@ -141,12 +96,12 @@ const Services: React.FC = () => {
               <div className={styles.cardActions}>
                 <button
                   type="button"
-                  className={`btn ${isExpanded ? 'btn--primary' : 'btn--primary'}`}
+                  className="btn btn--primary"
                   aria-expanded={isExpanded}
                   aria-controls={panelId}
                   onClick={() => toggle(s.title)}
                 >
-                  {isExpanded ? 'Hide Details' : 'Learn More'}
+                  {isExpanded ? 'Hide Details' : 'View Details'}
                 </button>
               </div>
             </li>
@@ -179,22 +134,22 @@ const Services: React.FC = () => {
 
       {/* Why work with us */}
       <div className={styles.whyBox} aria-labelledby="why-title">
-        <h3 id="why-title" className={styles.whyTitle}>Why Work With Our Team</h3>
+        <h3 id="why-title" className={styles.whyTitle}>Why Hosts Choose Sarina</h3>
         <ul className={styles.bullets}>
-          <li><strong>Clear process:</strong> share what to expect before you dive in.</li>
-          <li><strong>Flexible scope:</strong> adjust deliverables as your needs evolve.</li>
-          <li><strong>Open communication:</strong> keep stakeholders in the loop.</li>
-          <li><strong>Measurable outcomes:</strong> define success metrics early.</li>
+          <li><strong>Seasonal sourcing:</strong> trusted relationships with local farms and markets.</li>
+          <li><strong>Transparent planning:</strong> clear proposals, rentals, and staffing details up front.</li>
+          <li><strong>Respectful service:</strong> professional team members who treat your home like their own.</li>
+          <li><strong>Thoughtful follow-up:</strong> reheating notes, leftovers packed, and recipes to revisit.</li>
         </ul>
       </div>
 
       {/* CTA band */}
       <section className={styles.ctaBand} aria-labelledby="services-cta">
         <div className={styles.ctaBandInner}>
-          <h2 id="services-cta" className={styles.h2w}>Need help choosing a service?</h2>
-          <p className={styles.hintw}>Reach out with your goals and timeline to get a tailored plan.</p>
+          <h2 id="services-cta" className={styles.h2w}>Not sure which path suits your gathering?</h2>
+          <p className={styles.hintw}>Share your plans and we will recommend a menu, timeline, and staffing approach.</p>
           <div className={styles.sectionCtaRow}>
-            <Link className="btn btn--secondary" to="/contact">Contact Us</Link>
+            <Link className="btn btn--secondary" to="/contact">Start the Conversation</Link>
           </div>
         </div>
       </section>

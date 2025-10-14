@@ -13,19 +13,19 @@ type Testimonial = { name: string; quote: string };
 
 const testimonials: Testimonial[] = [
   {
-    name: 'Alex A.',
+    name: 'Maya L.',
     quote:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus scelerisque felis vitae mauris fermentum, in sagittis mi hendrerit.',
+      "Sarina transformed our anniversary dinner into a Tuscan getaway. Every course told a story and she accommodated our family's dietary needs with ease.",
   },
   {
-    name: 'Brianna B.',
+    name: 'Jordan P.',
     quote:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.',
+      'Her pasta workshop was the highlight of our team retreat. Sarina is patient, encouraging, and full of chef tips you can actually use at home.',
   },
   {
-    name: 'Carter C.',
+    name: 'Elena G.',
     quote:
-      'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam nisi ut aliquid ex ea commodi consequatur.',
+      'We hosted a garden party and guests are still talking about the lemon ricotta crostini. Thoughtful menu, beautiful presentation, effortless evening.',
   },
 ];
 
@@ -76,11 +76,15 @@ const Home: React.FC = () => {
       <section className={styles.wrapper} aria-labelledby="home-title">
         <div className={styles.intro}>
           <h2 id="home-title" className={styles.title}>
-            Welcome to Your Company Name
+            Welcome to Sarina's Kitchen
           </h2>
           <p className={styles.lead}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi
-            tristique senectus et netus et malesuada fames ac turpis egestas.
+            Thoughtfully crafted, Italian-inspired cuisine for intimate dinners, joyful celebrations,
+            and curious home cooks across the Greater Toronto Area.
+          </p>
+          <p className={styles.lead}>
+            Chef Sarina brings the farmers' market to your table with seasonal menus, warm hospitality,
+            and a teacher's heart.
           </p>
         </div>
       </section>
@@ -88,31 +92,54 @@ const Home: React.FC = () => {
       {/* Services snapshot: four cards linking to the Services page */}
       <section className={styles.section} aria-labelledby="services-title">
         <div className={styles.card}>
-          <h2 id="services-title" className={styles.sectionTitle}>What We Do</h2>
+          <h2 id="services-title" className={styles.sectionTitle}>Signature Offerings</h2>
           <p className={styles.sectionLead}>
-            Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus.
+            From in-home chef dinners to playful cooking lessons and petite celebrations, Sarina curates
+            experiences that feel like gathering around a well-loved family table.
           </p>
 
           <ul className={styles.cardGrid} role="list">
             <li className={styles.card}>
-              <img className={styles.cardImg} src={placeholderImg} alt="Service placeholder" loading="lazy" decoding="async" />
-              <h3 className={styles.cardHeading}>Service One</h3>
-              <p>Donec sed odio dui. Nulla vitae elit libero, a pharetra augue.</p>
+              <img
+                className={styles.cardImg}
+                src={placeholderImg}
+                alt="Chef plating handmade pasta"
+                loading="lazy"
+                decoding="async"
+              />
+              <h3 className={styles.cardHeading}>Private Cooking Experiences</h3>
+              <p>
+                Multi-course menus prepared in your kitchen, complete with sommelier-style pairing ideas and
+                effortless clean-up.
+              </p>
             </li>
             <li className={styles.card}>
-              <img className={styles.cardImg} src={placeholderImg} alt="Service placeholder" loading="lazy" decoding="async" />
-              <h3 className={styles.cardHeading}>Service Two</h3>
-              <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+              <img
+                className={styles.cardImg}
+                src={placeholderImg}
+                alt="Hands shaping fresh gnocchi"
+                loading="lazy"
+                decoding="async"
+              />
+              <h3 className={styles.cardHeading}>Hands-On Teaching</h3>
+              <p>
+                Interactive classes for couples, friends, and teams who want to build confidence with the
+                foundations of rustic Italian cooking.
+              </p>
             </li>
             <li className={styles.card}>
-              <img className={styles.cardImg} src={placeholderImg} alt="Service placeholder" loading="lazy" decoding="async" />
-              <h3 className={styles.cardHeading}>Service Three</h3>
-              <p>Etiam porta sem malesuada magna mollis euismod.</p>
-            </li>
-            <li className={styles.card}>
-              <img className={styles.cardImg} src={placeholderImg} alt="Service placeholder" loading="lazy" decoding="async" />
-              <h3 className={styles.cardHeading}>Service Four</h3>
-              <p>Cras mattis consectetur purus sit amet fermentum.</p>
+              <img
+                className={styles.cardImg}
+                src={placeholderImg}
+                alt="Seasonal spread of shared plates"
+                loading="lazy"
+                decoding="async"
+              />
+              <h3 className={styles.cardHeading}>Boutique Catering</h3>
+              <p>
+                Intimate gatherings up to 40 guests featuring seasonal small plates, vibrant grazing boards, and
+                warm, attentive service.
+              </p>
             </li>
           </ul>
           <div className={styles.sectionCtaRow} style={{ justifyContent: 'center' }}>
@@ -124,27 +151,36 @@ const Home: React.FC = () => {
       {/* Process: three simple steps */}
       <section className={styles.section} aria-labelledby="process-title">
         <div className={styles.card}>
-          <h2 id="process-title" className={styles.sectionTitle}>How It Works</h2>
+          <h2 id="process-title" className={styles.sectionTitle}>How We Bring Your Menu to Life</h2>
           <ol className={styles.steps} aria-label="Our three-step process">
             <li className={styles.step}>
               <span className={styles.stepNum}>1</span>
               <div>
-                <h3 className={styles.stepTitle}>Consult</h3>
-                <p>Phasellus euismod, urna eu tincidunt consequat, nisi nisl aliquet ipsum.</p>
+                <h3 className={styles.stepTitle}>Connect</h3>
+                <p>
+                  Share your celebration, cravings, and any dietary needs. We love hearing the stories behind your
+                  gathering.
+                </p>
               </div>
             </li>
             <li className={styles.step}>
               <span className={styles.stepNum}>2</span>
               <div>
-                <h3 className={styles.stepTitle}>Create</h3>
-                <p>Vestibulum id ligula porta felis euismod semper.</p>
+                <h3 className={styles.stepTitle}>Curate</h3>
+                <p>
+                  Sarina designs a seasonal menu and shopping list, then coordinates rentals or staffing as needed so
+                  you can relax.
+                </p>
               </div>
             </li>
             <li className={styles.step}>
               <span className={styles.stepNum}>3</span>
               <div>
-                <h3 className={styles.stepTitle}>Launch</h3>
-                <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+                <h3 className={styles.stepTitle}>Celebrate</h3>
+                <p>
+                  Enjoy the evening while we cook, serve, and leave your kitchen sparkling. All that is left is the
+                  last toast.
+                </p>
               </div>
             </li>
           </ol>
@@ -154,9 +190,9 @@ const Home: React.FC = () => {
       {/* CTA band: high-contrast nudge before testimonials */}
       <section className={styles.ctaBand} aria-labelledby="cta-title">
         <div className={styles.ctaBandInner}>
-          <h2 className={styles.h2w} id="cta-title">Ready to start your project?</h2>
+          <h2 className={styles.h2w} id="cta-title">Ready to cook something unforgettable?</h2>
           <div className={styles.sectionCtaRow}>
-            <Link className="btn btn--secondary" to="/contact">Contact Us</Link>
+            <Link className="btn btn--secondary" to="/contact">Plan Your Menu</Link>
           </div>
         </div>
       </section>
@@ -164,8 +200,10 @@ const Home: React.FC = () => {
       {/* Testimonials: semantic list for improved screen reader navigation */}
       <section className={styles.testimonials} aria-labelledby="testimonials-title">
         <div className={styles.card}>
-          <h2 id="testimonials-title">Client Feedback</h2>
-          <p>Use this area to highlight quotes from your clients once real copy is available.</p>
+          <h2 id="testimonials-title">Kind Words from the Table</h2>
+          <p>
+            A taste of the celebrations, classes, and evenings friends have shared with Sarina's Kitchen.
+          </p>
 
           <ul className={styles.cardGrid}>
             {testimonials.map((t, i) => (
@@ -182,7 +220,7 @@ const Home: React.FC = () => {
                   aria-controls="review-dialog"
                   onClick={() => openReview(t)}
                 >
-                  Read full review
+                  Read full story
                 </button>
               </li>
             ))}
@@ -200,7 +238,7 @@ const Home: React.FC = () => {
             id="review-dialog"
             onClick={(e) => e.stopPropagation()}
           >
-            <h3 className={styles.modalTitle} id="review-title">Review from {activeTestimonial.name}</h3>
+            <h3 className={styles.modalTitle} id="review-title">Story from {activeTestimonial.name}</h3>
             <blockquote className={styles.quote}>
               <p id="review-body">{activeTestimonial.quote}</p>
             </blockquote>
