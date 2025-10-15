@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/sarinas-kitchen/', // <-- repo name
+  base: '/Sarinas-Kitchen/', // <-- repo name
 });
 // This configuration sets up Vite for a React project with the base path set to the repository name.
