@@ -72,6 +72,46 @@ const Home: React.FC = () => {
 
   return (
     <>
+      {/* Hero: high-impact intro with CTA and supporting stats */}
+      <section className={styles.hero} aria-labelledby="hero-title">
+        <div className={styles.heroContent}>
+          <p className={styles.heroEyebrow}>Private Chef & Cooking Coach</p>
+          <h1 id="hero-title" className={styles.heroHeading}>
+            Seasonal Italian-inspired dining brought to your home.
+          </h1>
+          <p className={styles.heroLead}>
+            From coursed chef dinners to collaborative pasta workshops, Sarina brings lime-bright energy,
+            market-fresh ingredients, and a joyful pink pop of hospitality to every gathering.
+          </p>
+          <div className={styles.heroActions}>
+            <Link className="btn btn--primary" to="/contact">Plan a Menu</Link>
+            <Link className="btn btn--secondary" to="/services">See Services</Link>
+          </div>
+          <dl className={styles.heroStats}>
+            <div>
+              <dt>Gatherings</dt>
+              <dd>2&ndash;40 guests</dd>
+            </div>
+            <div>
+              <dt>Menus</dt>
+              <dd>Farm-focused + bespoke</dd>
+            </div>
+            <div>
+              <dt>Workshops</dt>
+              <dd>Hands-on + virtual</dd>
+            </div>
+          </dl>
+        </div>
+        <div className={styles.heroMedia}>
+          <img
+            src={placeholderImg}
+            alt="Chef Sarina finishing a vibrant seasonal dish"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+      </section>
+
       {/* Intro: simple welcome block in a card-style wrapper */}
       <section className={styles.wrapper} aria-labelledby="home-title">
         <div className={styles.intro}>

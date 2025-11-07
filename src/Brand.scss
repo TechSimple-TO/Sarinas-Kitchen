@@ -2,8 +2,8 @@
 /* Google Font moved to index.html <link> for better performance */
 
 :root {
-  --color-sage: #6a8d73;
-  --color-terracotta: #c0603a;
+  --color-sage: #32cd32;
+  --color-terracotta: #ff5fa2;
   --color-cream: #fdf5ec;
   --color-ink: #2f2d2a;
   --color-sand: #e8dcc9;
@@ -43,7 +43,7 @@ button, input, select, textarea {
 .site-header {
   background: var(--color-sage);
   color: #fff;
-  border-bottom: 4px solid rgba(192, 96, 58, 0.25);
+  border-bottom: 4px solid rgba(255, 95, 162, 0.25);
   box-shadow: 0 6px 18px rgba(47, 45, 42, 0.08);
 }
 .header-inner {
@@ -99,7 +99,7 @@ button, input, select, textarea {
 /* Accessible focus for keyboard users */
 .menu-toggle:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(192, 96, 58, .3);
+  box-shadow: 0 0 0 3px rgba(255, 95, 162, .3);
   border-radius: 6px;
 }
 
@@ -230,24 +230,24 @@ h6 { font-size: clamp(0.95rem, 1vw, 1.1rem); }
   background: var(--color-terracotta);
   color: #fff;
 }
-.btn--primary:hover, .cta:hover { background: #a74f2f; color: #fff; }
+.btn--primary:hover, .cta:hover { background: #e0408a; color: #fff; }
 
 /* Secondary (outlined). Also apply to legacy .ctaSecondary */
 .btn--secondary, .ctaSecondary {
   background: #fff;
   color: var(--color-sage);
-  border: 2px solid rgba(106, 141, 115, .35);
+  border: 2px solid rgba(50, 205, 50, .35);
 }
 .btn--secondary:hover, .ctaSecondary:hover {
   background: var(--color-sand);
   color: var(--color-terracotta);
-  border-color: rgba(192, 96, 58, .5);
+  border-color: rgba(255, 95, 162, .5);
 }
 
 /* Accessibility: clear, visible focus */
 .btn:focus-visible, .cta:focus-visible, .ctaSecondary:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(192, 96, 58, .3);
+  box-shadow: 0 0 0 3px rgba(255, 95, 162, .3);
 }
 
 /* Normalize native buttons when using button elements */

@@ -87,6 +87,60 @@
   border-radius: 8px;
 }
 
+.menuSection {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  padding: 2rem;
+  display: grid;
+  gap: 1.5rem;
+}
+.menuHeader {
+  text-align: center;
+  display: grid;
+  gap: .5rem;
+}
+.menuEyebrow {
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-size: .75rem;
+  color: var(--color-sage);
+  margin: 0;
+}
+.menuTitle { margin: 0; color: var(--color-terracotta); }
+.menuLead { margin: 0 auto; max-width: 720px; }
+.menuGrid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.menuCard {
+  border: 1px solid rgba(0,0,0,.05);
+  border-radius: 16px;
+  padding: 1.25rem;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px rgba(255, 95, 162, .08);
+  display: grid;
+  gap: .35rem;
+}
+.menuCourse {
+  font-size: .8rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+}
+.menuSubtitle { margin: 0; color: var(--color-terracotta); }
+.menuItems {
+  margin: .35rem 0 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: .2rem;
+}
+.menuItems li { margin: 0; }
+
 
 /* Why box */
 .whyBox {
@@ -101,7 +155,7 @@
 
 /* CTA band */
 .ctaBand {
-  background: linear-gradient(90deg, var(--color-terracotta), #d8744c);
+  background: linear-gradient(90deg, var(--color-terracotta), #ff85c1);
   color: #fff;
   border-radius: 16px;
 }

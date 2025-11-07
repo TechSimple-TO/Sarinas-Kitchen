@@ -18,6 +18,12 @@ type Service = {
   examples: string[];
 };
 
+type MenuSection = {
+  title: string;
+  subtitle: string;
+  items: string[];
+};
+
 const services: Service[] = [
   {
     title: 'Private Cooking Experiences',
@@ -56,6 +62,45 @@ const services: Service[] = [
       'Garden parties and shower brunches',
       'Cocktail receptions with roaming canapés',
       'Corporate lunches delivered and styled on-site',
+    ],
+  },
+];
+
+const sampleMenu: MenuSection[] = [
+  {
+    title: 'Antipasti',
+    subtitle: 'Bright bites to open the evening',
+    items: [
+      'Citrus-marinated olives with smoked sea salt',
+      'Lime-whipped ricotta crostini with pink peppercorn honey',
+      'Charred broccolini with pistachio gremolata',
+    ],
+  },
+  {
+    title: 'Primi',
+    subtitle: 'Handmade pastas & soups',
+    items: [
+      'Spinach tagliatelle with basil-lime pesto and burrata',
+      'Sweet corn cappelletti in toasted garlic brodo',
+      'Beetroot risotto finished with prosecco and mascarpone',
+    ],
+  },
+  {
+    title: 'Secondi',
+    subtitle: 'Show-stopping mains',
+    items: [
+      'Herb-crusted sea bass with pink peppercorn beurre blanc',
+      'Cider-brined chicken with blistered grape agrodolce',
+      'Porcini-dusted cauliflower steak with salsa verde',
+    ],
+  },
+  {
+    title: 'Dolci',
+    subtitle: 'Sweet finishes',
+    items: [
+      'Limoncello olive oil cake & macerated berries',
+      'Tiramisu pots with espresso caramel',
+      'Coconut panna cotta with rosé-poached rhubarb',
     ],
   },
 ];
@@ -131,6 +176,31 @@ const Services: React.FC = () => {
           </div>
         );
       })()}
+
+      {/* Sample menu grid */}
+      <section className={styles.menuSection} aria-labelledby="menu-title">
+        <div className={styles.menuHeader}>
+          <p className={styles.menuEyebrow}>Seasonal inspiration</p>
+          <h3 id="menu-title" className={styles.menuTitle}>Sample Chef's Menu</h3>
+          <p className={styles.menuLead}>
+            We design every course around your guests and the best produce available each week.
+            Here is a peek at dishes clients are loving right now.
+          </p>
+        </div>
+        <ul className={styles.menuGrid} role="list">
+          {sampleMenu.map((section) => (
+            <li key={section.title} className={styles.menuCard}>
+              <span className={styles.menuCourse}>{section.title}</span>
+              <h4 className={styles.menuSubtitle}>{section.subtitle}</h4>
+              <ul className={styles.menuItems}>
+                {section.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       {/* Why work with us */}
       <div className={styles.whyBox} aria-labelledby="why-title">
