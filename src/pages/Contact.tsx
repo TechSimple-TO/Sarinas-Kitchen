@@ -94,11 +94,11 @@ const Contact: React.FC = () => {
       {/* Left: Form card */}
       <div className={styles.formCard}>
         <h2 id="contact-title" className={styles.title}>
-          Contact Our Team
+          Let's Cook Together
         </h2>
         <p className={styles.lead}>
-          Have a project in mind? Fill out the form below and we will get back to you shortly with
-          next steps.
+          Tell us about your event, class idea, or dream menu. We'll follow up within two business
+          days with availability and a custom proposal.
         </p>
 
         <form onSubmit={onSubmit} noValidate aria-describedby="form-status" className={styles.form}>
@@ -153,7 +153,7 @@ const Contact: React.FC = () => {
               value={form.title}
               onChange={onChange}
               onBlur={onBlur}
-              placeholder="Short summary (e.g., website refresh)"
+              placeholder="Short summary (e.g., spring dinner party)"
               required
             />
             {touched.title && errors.title && (
@@ -171,7 +171,7 @@ const Contact: React.FC = () => {
               value={form.message}
               onChange={onChange}
               onBlur={onBlur}
-              placeholder="Tell us a bit about your goals..."
+              placeholder="Share the occasion, date, guest count, and any must-have dishes..."
               required
             />
             {touched.message && errors.message && (
@@ -199,24 +199,25 @@ const Contact: React.FC = () => {
 
       {/* Right: Info card */}
       <aside className={styles.infoCard} aria-label="Contact information">
-        <h3 className={styles.infoTitle}>Prefer email?</h3>
+        <h3 className={styles.infoTitle}>Prefer a direct hello?</h3>
         <p>
-          Reach us at{' '}
-          <a href="mailto:hello@example.com" className={styles.link}>
-            hello@example.com
-          </a>
+          Reach Sarina at{' '}
+          <a href="mailto:hello@sarinaskitchen.ca" className={styles.link}>
+            hello@sarinaskitchen.ca
+          </a>{' '}
+          or call <a className={styles.link} href="tel:14165550126">416-555-0126</a>.
         </p>
 
         <h4 className={styles.infoSub}>Hours</h4>
-        <p>Mon-Fri: 9:00-18:00 &middot; Weekends by appointment</p>
+        <p>Tuesday&nbsp;&ndash;&nbsp;Sunday: 10:00&ndash;20:00 &middot; Mondays reserved for market days</p>
 
         <h4 className={styles.infoSub}>Service Area</h4>
-        <p>Remote and on-site support wherever your clients are located.</p>
+        <p>Greater Toronto Area, York Region, and cottage getaways by request.</p>
 
         <div className={styles.noteBox}>
           <p>
-            Tip: Share project goals, timeline, and budget so you can tailor the first proposal to
-            your client's needs.
+            Include allergies, dietary preferences, venue address, and desired date so we can build a
+            detailed quote on the first reply.
           </p>
         </div>
       </aside>

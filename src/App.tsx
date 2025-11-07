@@ -14,7 +14,7 @@ import Layout from './Layout';
 
 const Home = lazy(() => import('./pages/Home'));
 const Services = lazy(() => import('./pages/Services'));
-const About = lazy(() => import('./pages/About'));
+const Bio = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 
 /**
@@ -34,7 +34,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/bio" element={<Bio />} />
+          <Route path="/about" element={<Bio />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Suspense>
