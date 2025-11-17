@@ -1,131 +1,59 @@
-﻿# Website Project Template (React + Vite)
+# Sarina's Kitchen (React + Vite)
 
-This branch provides a clean React + TypeScript + Vite starter packed with placeholder copy, images, and structure. Swap the lorem ipsum text, update the assets, and you have a ready-to-customize project foundation for your next client site.
+Simple Vite + React + TypeScript site with page-level components you can edit directly. This README focuses on how to change the on-page text and supporting assets.
 
-## Quick Start
+## Running the project
 
-1. Install dependencies
-   - `npm install`
-2. Configure environment
-   - Copy `.env.example` to `.env.local` and fill in the values (see below).
-3. Run locally
-   - `npm run dev`
-4. Build for production
-   - `npm run build`
+- Install deps: `npm install`
+- Start dev server: `npm run dev`
+- Build: `npm run build`
 
-## Environment Variables (EmailJS)
-
-The contact form uses EmailJS. Vite exposes only variables prefixed with `VITE_`.
-
-Required variables (set in `.env.local`):
+EmailJS (contact form) needs env vars in `.env.local`:
 
 ```
-VITE_EMAILJS_SERVICE_ID=service_xxx
-VITE_EMAILJS_TEMPLATE_ID=template_xxx
-VITE_EMAILJS_PUBLIC_KEY=public_xxx
+VITE_EMAILJS_SERVICE_ID=...
+VITE_EMAILJS_TEMPLATE_ID=...
+VITE_EMAILJS_PUBLIC_KEY=...
 ```
 
-Notes:
-- `.env.local` is git-ignored; do not commit secrets.
-- Copy `.env.example` as a template and update values from your EmailJS dashboard.
-- Restart the dev server after changing env vars.
-- The contact form sends fields: `name`, `email`, `title`, `message` - make sure your EmailJS template expects these variables.
+## Editing page content
 
-## Contributing / Reuse
+All copy lives in the page components under `src/pages/`. Update the strings and save; Vite hot-reloads in dev.
 
-Feel free to fork this repo or branch and adapt it for your workflow. Pull requests that improve clarity, accessibility, performance, or developer ergonomics are welcome.
+- **Home (`src/pages/Home.tsx`)**  
+  - Hero intro, stats, and CTA buttons are near the top of the component.  
+  - “Signature Offerings” cards and their body text are plain JSX strings.  
+  - Process steps and the CTA band text are also inline.  
+  - Styling: `src/pages/Home.module.scss` (e.g., card images, grid spacing, hero layout).
 
-## Git Worktrees (multi-branch setup)
+- **About (`src/pages/About.tsx`)**  
+  - Title, lead paragraphs, and the card section lists/notes are all JSX text.  
+  - The large image below the lead uses `aboutLogo`; swap the import/`src` and `alt` if you want a different photo.  
+  - Styling: `src/pages/About.module.scss` (image sizing, padding, cards).
 
-To avoid accidental cross-branch edits, the repo uses Git worktrees for active branches.
+- **Services (`src/pages/Services.tsx`)**  
+  - Service cards are defined in the `services` array (title, description, details, examples).  
+  - The Sample Chef’s Menu photo gallery uses `menuPhotos`; each entry has `title` and `desc` fields you can edit.  
+  - Styling for cards, menu gallery, and CTA band: `src/pages/Services.module.scss`.
 
-- Locations
-  - master: C:\Users\Nick\techsimple-client-vite
-  - deploy: C:\Users\Nick\_worktrees\deploy
-  - experiment: C:\Users\Nick\_worktrees\experiment
+- **Contact (`src/pages/Contact.tsx`)**  
+  - Form headings, helper text, status messages, and the info sidebar text are inline strings.  
+  - Adjust validation messages or placeholders directly in the component.  
+  - Styling: `src/pages/Contact.module.scss`.
 
-- Common commands
-  - List worktrees: `git worktree list`
-  - Update current worktree: `git pull`
-  - Commit and push: `git commit -m "..." && git push`
-  - Remove a worktree (run from the main repo folder):
-    - `git worktree remove C:\Users\Nick\_worktrees\experiment`
+- **Header & Footer (`src/Layout.tsx`)**  
+  - Navigation labels and footer copy live here.  
+  - The navbar logo image is imported as `logo` from `src/assets/Logo_1.png`; swap the import if you change the file.  
+  - Header/footer styles and global tokens: `src/Brand.scss`.
 
-- Notes
-  - Each folder is a full checkout locked to its branch.
-  - You can open each in its own editor window; run separate dev servers.
-  - The `deploy` branch includes `.gitattributes` to keep `server/` removed on merges.
+## Editing images
 
----
+- Assets live in `src/assets/`. Import a file and assign it to `src` on an `<img>` tag.  
+- For the Services menu gallery, add/remove entries in `menuPhotos` and ensure the imports match your filenames.  
+- To change sizing/fit, edit the corresponding SCSS module (e.g., `.cardImg`, `.menuPhoto img`, `.aboutImg`).
 
-Below are some notes from the original Vite template (kept for reference).
+## Notes
 
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, I recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- All page sections are plain React components—no CMS required.  
+- Keep button/link URLs (`to`/`href`) aligned with your routes.  
+- After editing env vars, restart `npm run dev` so Vite picks them up.

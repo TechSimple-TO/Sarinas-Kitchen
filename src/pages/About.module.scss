@@ -69,10 +69,12 @@
 .aboutImg {
   width: 100%;
   height: 260px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 16px;
   box-shadow: var(--shadow-soft);
   display: block;
+  background: #fff;
+  padding: 1.25rem;
 }
 @media (min-width: 1024px) {
   .aboutImg { height: 320px; }

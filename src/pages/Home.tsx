@@ -7,7 +7,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Home.module.scss';
 
-import placeholderImg from '../assets/placeholder.jpg';
+import heroImg from '../assets/Promo_4.jpg';
+import promoCard1 from '../assets/Promo_2.jpg';
+import promoCard2 from '../assets/Promo_3.jpg';
+import promoCard3 from '../assets/Promo_5.jpg';
 
 type Testimonial = { name: string; quote: string };
 
@@ -104,7 +107,7 @@ const Home: React.FC = () => {
         </div>
         <div className={styles.heroMedia}>
           <img
-            src={placeholderImg}
+            src={heroImg}
             alt="Chef Sarina finishing a vibrant seasonal dish"
             loading="eager"
             decoding="async"
@@ -142,7 +145,7 @@ const Home: React.FC = () => {
             <li className={styles.card}>
               <img
                 className={styles.cardImg}
-                src={placeholderImg}
+                src={promoCard1}
                 alt="Chef plating handmade pasta"
                 loading="lazy"
                 decoding="async"
@@ -156,7 +159,7 @@ const Home: React.FC = () => {
             <li className={styles.card}>
               <img
                 className={styles.cardImg}
-                src={placeholderImg}
+                src={promoCard2}
                 alt="Hands shaping fresh gnocchi"
                 loading="lazy"
                 decoding="async"
@@ -170,7 +173,7 @@ const Home: React.FC = () => {
             <li className={styles.card}>
               <img
                 className={styles.cardImg}
-                src={placeholderImg}
+                src={promoCard3}
                 alt="Seasonal spread of shared plates"
                 loading="lazy"
                 decoding="async"

@@ -6,7 +6,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './About.module.scss';
-import placeholderImg from '../assets/placeholder.jpg';
+import aboutLogo from '../assets/Logo_1.png';
 
 const About: React.FC = () => (
   // Wrapper applies spacing + fade-in animation
@@ -30,8 +30,8 @@ const About: React.FC = () => (
     {/* Photo just below the About section */}
     <img
       className={styles.aboutImg}
-      src={placeholderImg}
-      alt="Chef Sarina plating handmade pasta"
+      src={aboutLogo}
+      alt="Sarina's Kitchen logo"
       loading="lazy"
     />
 
