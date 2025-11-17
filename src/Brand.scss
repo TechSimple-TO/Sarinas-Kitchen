@@ -57,6 +57,15 @@ button, input, select, textarea {
   text-decoration: none;
   color: inherit;
 }
+.brand-logo {
+  width: 96px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: contain;
+  background: #fff;
+  padding: 4px;
+  box-shadow: 0 8px 18px rgba(0,0,0,.15);
+}
 .brand-mark {
   width: 40px;
   height: 40px;

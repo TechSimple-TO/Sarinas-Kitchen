@@ -109,6 +109,11 @@
 }
 .menuTitle { margin: 0; color: var(--color-terracotta); }
 .menuLead { margin: 0 auto; max-width: 720px; }
+.menuGalleryHeader {
+  text-align: center;
+  display: grid;
+  gap: .35rem;
+}
 .menuGrid {
   list-style: none;
   padding: 0;
@@ -140,6 +145,43 @@
   gap: .2rem;
 }
 .menuItems li { margin: 0; }
+
+.menuGallery {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  /* Wider min width to cap rows at a max of 4 cards */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.menuPhoto {
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  background: #fff;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+.menuPhoto img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+.menuPhotoText {
+  padding: .75rem;
+  display: grid;
+  gap: .25rem;
+}
+.menuPhotoText h5 {
+  margin: 0;
+  color: var(--color-terracotta);
+}
+.menuPhotoText p {
+  margin: 0;
+  font-size: .95rem;
+}
 
 
 /* Why box */

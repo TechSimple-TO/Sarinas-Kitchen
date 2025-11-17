@@ -12,6 +12,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Brand.scss';
+import logo from './assets/Logo_1.png';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   // Track the mobile menu open/closed state.
@@ -40,7 +41,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {/* Brand "home" link.
              Using <Link> avoids a full page reload compared to <a href="/">. */}
           <Link className="brand" to="/" aria-label="Sarina's Kitchen home">
-            <span className="brand-mark" aria-hidden="true">SK</span>
+            <img className="brand-logo" src={logo} alt="Sarina's Kitchen logo" />
             <span className="brand-wordmark">
               Sarina's Kitchen
               <span className="brand-tagline">Private chef • teacher • caterer</span>

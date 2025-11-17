@@ -8,7 +8,14 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Services.module.scss';
 
-import placeholderImg from '../assets/placeholder.jpg';
+import menu1 from '../assets/Menu_1.jpg';
+import menu2 from '../assets/Menu_2.jpg';
+import menu3 from '../assets/Menu_3.jpg';
+import menu4 from '../assets/Menu4.jpg';
+import menu5 from '../assets/Menu_5.jpg';
+import menu6 from '../assets/Menu_6.jpg';
+import menu7 from '../assets/Menu_7.jpg';
+import menu8 from '../assets/Menu_8.jpg';
 
 type Service = {
   title: string;
@@ -18,18 +25,12 @@ type Service = {
   examples: string[];
 };
 
-type MenuSection = {
-  title: string;
-  subtitle: string;
-  items: string[];
-};
-
 const services: Service[] = [
   {
     title: 'Private Cooking Experiences',
     description:
       "Restaurant-caliber, multi-course menus prepared in your kitchen with optional wine pairings and candlelit table styling.",
-    img: placeholderImg,
+    img: menu8,
     details:
       'Sarina sources seasonal produce, arrives fully prepped, and leaves your kitchen spotless. Menus are customized after a planning call and include printed keepsake menus for your guests.',
     examples: [
@@ -42,7 +43,7 @@ const services: Service[] = [
     title: 'Hands-On Teaching & Workshops',
     description:
       'Intimate culinary classes for couples, families, and teams ready to build confidence with Italian techniques.',
-    img: placeholderImg,
+    img: menu2,
     details:
       'Each class includes a pre-session call, curated shopping list, and a post-class recap with recipes and chef tips. Virtual add-ons and ingredient kits are available for remote attendees.',
     examples: [
@@ -55,7 +56,7 @@ const services: Service[] = [
     title: 'Boutique Catering',
     description:
       'Elevated small-event catering with vibrant grazing tables, cocktail bites, and family-style spreads for up to 40 guests.',
-    img: placeholderImg,
+    img: menu4,
     details:
       'Perfect for showers, milestone birthdays, or corporate open houses. Our team can coordinate rentals, servers, and bartenders to match your vibe.',
     examples: [
@@ -66,43 +67,15 @@ const services: Service[] = [
   },
 ];
 
-const sampleMenu: MenuSection[] = [
-  {
-    title: 'Antipasti',
-    subtitle: 'Bright bites to open the evening',
-    items: [
-      'Citrus-marinated olives with smoked sea salt',
-      'Lime-whipped ricotta crostini with pink peppercorn honey',
-      'Charred broccolini with pistachio gremolata',
-    ],
-  },
-  {
-    title: 'Primi',
-    subtitle: 'Handmade pastas & soups',
-    items: [
-      'Spinach tagliatelle with basil-lime pesto and burrata',
-      'Sweet corn cappelletti in toasted garlic brodo',
-      'Beetroot risotto finished with prosecco and mascarpone',
-    ],
-  },
-  {
-    title: 'Secondi',
-    subtitle: 'Show-stopping mains',
-    items: [
-      'Herb-crusted sea bass with pink peppercorn beurre blanc',
-      'Cider-brined chicken with blistered grape agrodolce',
-      'Porcini-dusted cauliflower steak with salsa verde',
-    ],
-  },
-  {
-    title: 'Dolci',
-    subtitle: 'Sweet finishes',
-    items: [
-      'Limoncello olive oil cake & macerated berries',
-      'Tiramisu pots with espresso caramel',
-      'Coconut panna cotta with rosé-poached rhubarb',
-    ],
-  },
+const menuPhotos = [
+  { src: menu1, title: 'Market Morning Muffins', desc: 'Warm chocolate chip + pepita muffins for brunch grazing.' },
+  { src: menu2, title: 'Garlic Herb Focaccia', desc: 'Sheet-pan focaccia with rosemary, sea salt, and olive oil.' },
+  { src: menu3, title: 'Citrus Ceviche', desc: 'Line-caught fish with lime, peppers, cilantro, and red onion.' },
+  { src: menu4, title: 'Grill-Ready Kebabs', desc: 'Lamb, chicken, and veggie skewers prepped for the barbecue.' },
+  { src: menu5, title: 'Dolmas', desc: 'Hand-rolled grape leaves with herbed rice and lemon.' },
+  { src: menu6, title: 'Garden Tabbouleh', desc: 'Parsley-forward salad with tomatoes, bulgur, and lemon.' },
+  { src: menu7, title: 'Olive Focaccia', desc: 'Black olive-studded focaccia for antipasti boards.' },
+  { src: menu8, title: 'Kataifi & Cream', desc: 'Crisp kataifi nests with whipped cream and pistachio.' },
 ];
 
 const Services: React.FC = () => {
@@ -187,16 +160,15 @@ const Services: React.FC = () => {
             Here is a peek at dishes clients are loving right now.
           </p>
         </div>
-        <ul className={styles.menuGrid} role="list">
-          {sampleMenu.map((section) => (
-            <li key={section.title} className={styles.menuCard}>
-              <span className={styles.menuCourse}>{section.title}</span>
-              <h4 className={styles.menuSubtitle}>{section.subtitle}</h4>
-              <ul className={styles.menuItems}>
-                {section.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+
+        <ul className={styles.menuGallery} role="list">
+          {menuPhotos.map((photo) => (
+            <li key={photo.title} className={styles.menuPhoto}>
+              <img src={photo.src} alt={photo.title} loading="lazy" />
+              <div className={styles.menuPhotoText}>
+                <h5>{photo.title}</h5>
+                <p>{photo.desc}</p>
+              </div>
             </li>
           ))}
         </ul>
